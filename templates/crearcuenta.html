@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear una cuenta</title>
-    <link rel="stylesheet" href="../Statics/Styles/index.css">
-    <script src="../Dynamics/js/script.js"></script>
-    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../statics/css/index.css">
+    <script src="../dynamics/js/script.js"></script>
+    <link rel="icon" href="../statics/media/Imágenes/Coyote-Icon.png" type="image/x-icon">
 
 </head>
 <body>
@@ -19,7 +19,7 @@
 
     <h1>Crear una cuenta</h1>
 
-    <form id="crearCuentaForm" method="POST" action="../Dynamics/php/procesarcuenta.php">
+    <form id="crearCuentaForm" method="POST" action="../dynamics/php/procesarcuenta.php">
         <label for="nombres">Nombre(s):</label>
         <input type="text" id="nombres" name="nombres" required>
         <br>
@@ -45,15 +45,15 @@
 
     <script>
         document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         });
 
         document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         });
 
         document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         });
 
         document.getElementById("verContraseñaBtn").addEventListener("click", function() {
