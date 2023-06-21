@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
     paginaPrincipalBtn.addEventListener("click", function() {
       // Redirige al index.html
-      window.location.href = "../index.html";
+      window.location.href = "../templates/index.html";
     });
   
     iniciarSesionBtn.addEventListener("click", function() {
       // Redirige al index.html
-      window.location.href = "../index.html";
+      window.location.href = "../templates/index.html";
     });
   
     crearCuentaBtn.addEventListener("click", function() {
       // Redirige al index.html
-      window.location.href = "../index.html";
+      window.location.href = "../templates/index.html";
     });
   });

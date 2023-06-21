@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <link rel="stylesheet" href="../Statics/Styles/index.css">
-    <script src="../Dynamics/js/script.js"></script>
-    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../statics/css/index.css">
+    <script src="../dynamics/js/script.js"></script>
+    <link rel="icon" href="../statics/media/Imágenes/Coyote-Icon.png" type="image/x-icon">
 
 </head>
 
@@ -29,30 +29,30 @@
     <input type="password" name="contraseña" id="contraseña" minlength="9" maxlength="9" required>
     <br>
     <a href="olvidoContraseña.html">¿Olvidaste tu contraseña?</a>
-    <a href="crearcuenta.html">Crear Cuenta</a>
+    <a href="./templates/crearcuenta.html">Crear Cuenta</a>
   </form>
 
   <button type="submit">Ingresar</button>
   
   <script>
     document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
-        window.location.href = "index.html";
+        window.location.href = "./templates/index.html";
     });
 
     document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
-        window.location.href = "administrador.html";
+        window.location.href = "./templates/administrador.html";
     });
 
     document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-        window.location.href = "crearcuenta.html";
+        window.location.href = "./templates/crearcuenta.html";
     });
 
     document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-            window.location.href = "crearcuenta.html";
+            window.location.href = "./templates/crearcuenta.html";
     });
 
 </script>
 
-  <script src="script.js"></script>
+  <script src="../dynamics/js/script.js"></script>
 </body>
 </html>
