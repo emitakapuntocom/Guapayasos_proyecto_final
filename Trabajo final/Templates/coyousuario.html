@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoyoApp</title>
+    <link rel="stylesheet" href="../Statics/Styles/index.css">
+    <script src="../Dynamics/js/script.js"></script>
+    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="header">
+        <button id="coyoForosBtn">CoyoForos</button>
+        <button id="coyoDudasBtn">CoyoDudas</button>
+        <button id="coyoEmprendimientoBtn">CoyoEmprendimiento</button>
+        <button id="coyoComunidadBtn">CoyoComunidad</button>
+        <button id="coyoPerdidosBtn">CoyoPerdidos</button>
+    </div>
+
+    <script>
+        document.getElementById("coyoForosBtn").addEventListener("click", function() {
+            window.location.href = "coyoforos.html";
+        });
+
+        document.getElementById("coyoDudasBtn").addEventListener("click", function() {
+            window.location.href = "coyodudas.html";
+        });
+
+        document.getElementById("coyoEmprendimientoBtn").addEventListener("click", function() {
+            window.location.href = "coyoemprendimiento.html";
+        });
+
+        document.getElementById("coyoComunidadBtn").addEventListener("click", function() {
+            window.location.href = "coyocomunidad.html";
+        });
+
+        document.getElementById("coyoPerdidosBtn").addEventListener("click", function() {
+            window.location.href = "coyoperdidos.html";
+        });
+    </script>
+</body>
+</html>

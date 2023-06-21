@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear una cuenta</title>
+    <link rel="stylesheet" href="../Statics/Styles/index.css">
+    <script src="../Dynamics/js/script.js"></script>
+    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="header">
+        <button id="paginaPrincipalBtn">Página Principal</button>
+        <button id="iniciarSesionBtn">Iniciar Sesión</button>
+        <button id="crearCuentaBtn">Crear una Cuenta</button>
+    </div>
+
+    <h1>Crear una cuenta</h1>
+
+    <form id="crearCuentaForm" method="POST" action="../Dynamics/php/procesarcuenta.php">
+        <label for="nombres">Nombre(s):</label>
+        <input type="text" id="nombres" name="nombres" required>
+        <br>
+        <label for="apellidoPaterno">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <br>
+        <label for="numeroCuenta">Número de cuenta (9 caracteres):</label>
+        <input type="text" id="numeroCuenta" name="numeroCuenta" minlength="9" maxlength="9" required>
+        <br>
+        <label for="correoElectronico">Correo electrónico:</label>
+        <input type="email" id="correoElectronico" name="correoElectronico" required>
+        <br>
+        <label for="contrasena">Contraseña (9 caracteres):</label>
+        <input type="password" id="contraseña" name="contraseña" minlength="9" maxlength="9" required>
+        <br>
+        <label for="confirmarContrasena">Confirmar contraseña:</label>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena" minlength="9" maxlength="9" required>
+        <br>
+        <button id="verContraseñaBtn" type="button">Ver contraseñas</button>
+        <br>
+        <button type="submit">Crear cuenta</button>
+    </form>
+
+    <script>
+        document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("crearCuentaBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("verContraseñaBtn").addEventListener("click", function() {
+            var contraseñaInput = document.getElementById("contraseña");
+            var confirmarContraseñaInput = document.getElementById("confirmarContrasena");
+            if (contraseñaInput.type === "password") {
+                contraseñaInput.type = "text";
+                confirmarContraseñaInput.type = "text";
+                this.textContent = "Ocultar contraseñas";
+            } else {
+                contraseñaInput.type = "password";
+                confirmarContraseñaInput.type = "password";
+                this.textContent = "Ver contraseñas";
+            }
+        });
+
+        document.getElementById("crearCuentaForm").addEventListener("submit", function(event) {
+            var contraseña = document.getElementById("contraseña").value;
+            var confirmarContraseña = document.getElementById("confirmarContrasena").value;
+            if (contraseña.length !== 9) {
+                alert("La contraseña debe tener exactamente 9 caracteres. Por favor, inténtalo de nuevo.");
+                event.preventDefault();
+            } else if (contraseña !== confirmarContraseña) {
+                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

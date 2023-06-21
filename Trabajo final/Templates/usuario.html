@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="../Statics/Styles/index.css">
+    <script src="../Dynamics/js/script.js"></script>
+    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="header">
+        <button id="paginaPrincipalBtn">Página Principal</button>
+        <button id="iniciarSesionBtn">Iniciar Sesión</button>
+        <button id="crearCuentaBtn">Crear una Cuenta</button>
+    </div>
+
+    <h1>Usuario</h1>
+
+    <form id="usuarioForm" method="POST">
+        <label for="numeroCuenta">Número de cuenta (9 caracteres):</label>
+        <input type="text" name="numeroCuenta" id="numeroCuenta" minlength="9" maxlength="9" required>
+        <br>
+        <label for="contraseña">Contraseña (9 dígitos):</label>
+        <input type="password" name="contraseña" id="contraseña" minlength="9" maxlength="9" required>
+        <br>
+        <a href="olvidoContraseña.html">¿Olvidaste tu contraseña?</a>
+        <a href="crearcuenta.html">Crear Cuenta</a>
+    </form>
+
+    <button id="ingresarBtn" type="submit">Ingresar</button>
+
+    <script>
+
+        document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
+            window.location.href = "usuario.html";
+        });
+
+        document.getElementById("crearCuentaBtn").addEventListener("click", function() {
+            window.location.href = "crearcuenta.html";
+        });
+
+        document.getElementById("ingresarBtn").addEventListener("click", function() {
+            window.location.href = "coyousuario.html";
+        });
+
+    </script>
+
+</body>
+</html>
