@@ -7,52 +7,91 @@
     <title>Crear una cuenta</title>
     <link rel="stylesheet" href="../Statics/Styles/index.css">
     <script src="../Dynamics/js/script.js"></script>
-    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
+    <link rel="icon" href="../statics/media/img/Godo.png" type="image/x-icon">
 
 </head>
 <body>
     <div class="header">
         <button id="paginaPrincipalBtn">Página Principal</button>
-        <button id="iniciarSesionBtn">Iniciar Sesión</button>
-        <button id="crearCuentaBtn">Crear una Cuenta</button>
     </div>
 
     <h1>Crear una cuenta</h1>
 
-    <form id="crearCuentaForm" method="POST" action="../Dynamics/php/procesarcuenta.php">
-        <label for="nombres">Nombre(s):</label>
-        <input type="text" id="nombres" name="nombres" required>
-        <br>
-        <label for="apellidoPaterno">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
-        <br>
-        <label for="numeroCuenta">Número de cuenta (9 caracteres):</label>
-        <input type="text" id="numeroCuenta" name="numeroCuenta" minlength="9" maxlength="9" required>
-        <br>
-        <label for="correoElectronico">Correo electrónico:</label>
-        <input type="email" id="correoElectronico" name="correoElectronico" required>
-        <br>
-        <label for="contrasena">Contraseña (9 caracteres):</label>
-        <input type="password" id="contraseña" name="contraseña" minlength="9" maxlength="9" required>
-        <br>
-        <label for="confirmarContrasena">Confirmar contraseña:</label>
-        <input type="password" id="confirmarContrasena" name="confirmarContrasena" minlength="9" maxlength="9" required>
-        <br>
-        <button id="verContraseñaBtn" type="button">Ver contraseñas</button>
-        <br>
-        <button type="submit">Crear cuenta</button>
-    </form>
+    <!-- FORMULARIO CREAR CUENTA -->
+    <form id="crearCuentaForm" method="POST">
 
+        <label for="NoCuenta">Número de Cuenta:
+            <br>
+            <input type="number" name="no_cuenta" id="UsuCuenta">
+        </label>
+        <br>
+        <br>
+        <label for="NombreUsu" >Nombre(s):
+            <br>
+            <input type="text" name="usuario" id="UsuNom">
+        </label>
+        <br>
+        <br>
+        <label for="Apellidos">Apellidos:
+            <br>
+            <input type="text" name="apellidos" id="UsuarioA">
+        </label>
+        <br>
+        <br>
+        <label for="turno">Selecciona tu turno:
+            <select name="turno">
+                <option value="matutino">Matutino</option>
+                <option value="vespertino">Vespertino</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <label for="grado">Selecciona tu grado:
+            <select name="grado">
+                <option value="cuarto">Cuarto</option>
+                <option value="quinto">Quinto</option>
+                <option value="sexto">Sexto</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <label for="NoTel">Número Telefónico:
+            <br>
+            <input type="tel" name="no_tel" id="UsuTel">
+        </label>
+        <br>
+        <br>
+        <label for="Contraseña">Contraseña:
+            <br>
+            <input type="password" id="contraseña" name="UsuContra">
+        </label>
+        <br>
+        <br>
+        <label for="Contraseña">Confirmar contraseña:
+            <br>
+            <input type="password" id="confirmarContrasena" name="UsuContra">
+        </label>
+        <br>
+        <br>
+        <label for="return">
+            <button type="button" id="verContraseñaBtn">Ver contraseña</button>
+        </label>
+        <br>
+        <br>
+        <label for="FotoUsuario">Elige una foto de perfil:
+            <br>
+            <input type="file" name="PFP" id="FotoUsu" accept="image/png, image/jpeg">
+        </label>
+        <br>
+        <br>
+        <label for="return">
+            <button type="submit" id="submit">Registrarse</button>
+        </label>
+        </form>
+
+    <!-- SCRIPT -->
     <script>
         document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
-        });
-
-        document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
-        });
-
-        document.getElementById("crearCuentaBtn").addEventListener("click", function() {
             window.location.href = "index.html";
         });
 
@@ -70,17 +109,19 @@
             }
         });
 
+
         document.getElementById("crearCuentaForm").addEventListener("submit", function(event) {
             var contraseña = document.getElementById("contraseña").value;
             var confirmarContraseña = document.getElementById("confirmarContrasena").value;
-            if (contraseña.length !== 9) {
-                alert("La contraseña debe tener exactamente 9 caracteres. Por favor, inténtalo de nuevo.");
+            if (contraseña.length <= 8) {
+                alert("La contraseña debe tener 8 caracteres mínimo. Por favor, inténtalo de nuevo.");
                 event.preventDefault();
             } else if (contraseña !== confirmarContraseña) {
                 alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
                 event.preventDefault();
             }
         });
+
     </script>
 </body>
 </html>
