@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear publicación</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     
     <br>
     <br>
-    <table border="1" align="center" width="300">
+    <table align="center">
 
         <thead>
             <th><h1>Crear una publicación...</h1></th>
@@ -17,11 +18,13 @@
 
         <tbody>
             <td>
-                <form action="../dynamics/php/pventas.php" method="post" enctype="multipart/form-data" target="_self">
-                    <label for ="TituloPubli">Título de la Publicación:
+                <form method="post">
+                    <p> </p>
+                    <label for="TituloPubli">Título de la Publicación:
                         <br>
-                        <input type="text" name="TituloPubli" id="TituloPubliVentas">
+                        <input type="text" name="TituloPubli1" id="TituloPubliVentas">
                     </label>
+                    <br>
                     <br>
                     <label for="Descripción">Descripción del producto:
                         <br>
@@ -45,17 +48,24 @@
                     </label>
                     <br>
                     <br>
-                </form>
-                <form action='..\templates\map.html' method='post' target='_self'>
-                        <input type='submit' value='Ubicación'/>
+                    <label for="Ubicación">
+                        <button type="button">Selecciona Punto de Venta</button>
+                    </label>
                 </form>
             </td>
 
         </tbody>
         
     </table>
-    
-    
+    <div>
+        <div class="barra"></div>
+        <div class="circulo"></div>
+        <div class="circle"><img src="./logoo.png" id="logonegro"><img src="./logo.png" id="logo"></div>
+        <div class="coyoforos"><h2>Coyo Foros</h2></div>
+        <div class="emprendimiento"><h2><u>Coyo emprendimiento</u></h2></div>
+        <div class="engranaje"></div>
+        <div class="luna"></div>
+        <div class="sol"></div>
+    </div>
 </body>
 </html>
-
