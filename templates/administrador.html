@@ -7,16 +7,16 @@
     <title>Administrador</title>
     <link rel="stylesheet" href="../Statics/Styles/index.css">
     <script src="../Dynamics/js/script.js"></script>
-    <link rel="icon" href="../Statics/Img/Coyote-Icon.png" type="image/x-icon">
-
+    <link rel="icon" href="../statics/media/img/Godo.png" type="image/x-icon">
+    
 </head>
 
 <body>
     
     <div class="header">
     <button id="paginaPrincipalBtn">Página Principal</button>
-    <button id="iniciarSesionBtn">Iniciar Sesión</button>
-    <button id="crearCuentaBtn">Crear una Cuenta</button>
+    <!-- <button id="iniciarSesionBtn">Iniciar Sesión</button>
+    <button id="crearCuentaBtn">Crear una Cuenta</button> -->
     </div>
 
   <h1>Administrador</h1>
@@ -28,7 +28,7 @@
     <label for="contraseña">Contraseña (9 dígitos):</label>
     <input type="password" name="contraseña" id="contraseña" minlength="9" maxlength="9" required>
     <br>
-    <a href="olvidoContraseña.html">¿Olvidaste tu contraseña?</a>
+
     <a href="crearcuenta.html">Crear Cuenta</a>
   </form>
 
@@ -37,18 +37,6 @@
   <script>
     document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
         window.location.href = "index.html";
-    });
-
-    document.getElementById("iniciarSesionBtn").addEventListener("click", function() {
-        window.location.href = "administrador.html";
-    });
-
-    document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-        window.location.href = "crearcuenta.html";
-    });
-
-    document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-            window.location.href = "crearcuenta.html";
     });
 
 </script>

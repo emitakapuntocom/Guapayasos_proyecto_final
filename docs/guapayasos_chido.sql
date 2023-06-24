@@ -108,11 +108,11 @@ CREATE TABLE `usuarios` (
   `ID_usuario` int(11) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
-  `numero_contacto` int(11) NOT NULL,
-  `foto_perfil` char(1) NOT NULL,
+  `numero_contacto` varchar(10) DEFAULT NULL,
+  `foto_perfil` char(30) DEFAULT NULL,
   `apellidos` varchar(40) NOT NULL,
-  `grupo` char(1) NOT NULL,
-  `turno` char(1) NOT NULL,
+  `grupo` char(10) DEFAULT NULL,
+  `turno` char(10) DEFAULT NULL,
   `rol` int(11) NOT NULL,
   PRIMARY KEY (`ID_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -124,6 +124,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (0,'Kendra Regina','','0','C','Rauda Ramírez','q','v',0),(321184570,'Prueba','6694cc32d0c7ae8eeaf4','5575182296','fondofalcon.jpg','Hola Spoy','quinto','vespertino',1),(321234567,'Annie','269935db3772f699d32c','0','fondofalcon.jpg','Sánchez Hola','quinto','vespertino',1),(321234598,'Annie','f8a1509d84a89eb893b4','2147483647','fondofalcon.jpg','Sánchez Hola','quinto','vespertino',1),(322184570,'Prueba','1e86401177ffd46e140b','2147483647','fondofalcon.jpg','Hola Spoy','quinto','vespertino',1),(322185407,'Kendra Regina','ca2f2069ea0c6e465822','2147483647','Captura de pantalla 2023-06-21','Rauda Ramírez','cuarto','matutino',1),(322185470,'Annie','51f9f67c3ff39b7ea01e','2147483647','fondofalcon.jpg','Sánchez Hola','quinto','vespertino',1),(323186507,'','','0','','','','',0);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-19  0:51:58
+-- Dump completed on 2023-06-23 17:53:40
