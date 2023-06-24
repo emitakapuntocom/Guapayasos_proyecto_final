@@ -8,7 +8,7 @@
     $apellidos = (isset($_POST["apellidos"]) && $_POST["apellidos"] != "")? $_POST["apellidos"]: false;
     $no_cuenta = (isset($_POST["no_cuenta"]) && $_POST["no_cuenta"] != "")? $_POST["no_cuenta"]: false; 
     $telefono = (isset($_POST["no_tel"]) && $_POST["no_tel"] != "")? $_POST["no_tel"]: false;
-    $contraseña = (isset($_POST["contraseña"]) && $_POST["contraseña"] != "")? $_POST["contraseña"]: false;
+    $contraseña = (isset($_POST["contrasena"]) && $_POST["contrasena"] != "")? $_POST["contrasena"]: false;
     $foto = (isset($_POST["PFP"]) && $_POST["PFP"] != "")? $_POST["PFP"]: false;
     $turno = (isset($_POST["turno"]) && $_POST["turno"] != "")? $_POST["turno"]: false;
     $grado = (isset($_POST["grado"]) && $_POST["grado"] != "")? $_POST["grado"]: false;
@@ -18,9 +18,9 @@
     /*Para teléfono*/$miregex2= "/^55[0-9]{8}/";
     /*Para contraseña*/$miregex3= "/[A-z 0-9 \W]{8,}/";
 
-    $respuesta = " ";
+    $respuesta = "Registrado Papu";
 
-    //FILTROS
+   //FILTROS
     if($no_cuenta)
     {
         if(preg_match($miregex1, $no_cuenta))
@@ -31,7 +31,7 @@
 
             if(!$datos)
             {
-                $no_cuenta_clean = filter_var($no_cuenta, FILTER_SANITIZE_NUMBER_INT);//Sanitización de entradas
+                $no_cuenta_clean = filter_var($no_cuenta, FILTER_SANITIZE_NUMBER_INT);
                 
                 if($nombre && $apellidos && $turno && $grado && $foto)
                 {
@@ -48,7 +48,6 @@
                             {
                                 if(preg_match($miregex3, $contraseña))
                                 {
-                                    //HASHEO
                                     $sal=uniqid();
                                     
                                     $caracteres = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
@@ -66,7 +65,7 @@
 
                                 }else
                                     {
-                                        $respuesta= array("mensaje" => "Contraseña no válida");
+                                        $respuesta= array("mensaje" => "Contraseña no valida");
                                     }
 
                             }else   
@@ -75,12 +74,12 @@
                                 }
                         }else   
                             {
-                                $respuesta= array("mensaje" => "Número de contacto no válido");
+                                $respuesta= array("mensaje" => "Numero de contacto no válido");
                             }
 
                     }else
                         {
-                            $respuesta= array("mensaje" => "Por favor ingresa un número de contacto");
+                            $respuesta= array("mensaje" => "Por favor ingresa un numero de contacto");
                         }
 
                 }elseif(!$nombre)
@@ -112,12 +111,12 @@
 
         }else
             {
-                $respuesta= array("mensaje" => "Número de cuenta no válido");
+                $respuesta= array("mensaje" => "Numero de cuenta no válido");
             }
 
     }else
         {
-            $respuesta= array("mensaje" => "Por favor ingresa tu número de cuenta");
+            $respuesta= array("mensaje" => "Por favor ingresa tu numero de cuenta");
         }
 
     echo json_encode($respuesta);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear una cuenta</title>
     <link rel="stylesheet" href="../Statics/Styles/index.css">
-    <script src="../Dynamics/js/script.js"></script>
+    <script src="../dynamics/js/script.js"></script>
     <link rel="icon" href="../statics/media/img/Godo.png" type="image/x-icon">
 
 </head>
@@ -17,86 +17,83 @@
 
     <h1>Crear una cuenta</h1>
 
-    <!-- FORMULARIO CREAR CUENTA -->
-    <form id="crearCuentaForm" method="POST">
+        <div id="form">
+            <label for="NoCuenta">Número de Cuenta:
+                <br>
+                <input type="number" name="no_cuenta" id="no_cuenta">
+            </label>
+            <br>
+            <br>
+            <label for="NombreUsu" >Nombre(s):
+                <br>
+                <input type="text" name="usuario" id="usuario">
+            </label>
+            <br>
+            <br>
+            <label for="Apellidos">Apellidos:
+                <br>
+                <input type="text" name="apellidos" id="apellidos">
+            </label>
+            <br>
+            <br>
+            <label for="turno" id="turno">Selecciona tu turno:
+                <select name="turno" id="turno">
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label for="grado">Selecciona tu grado:
+                <select name="grado" id="grado">
+                    <option value="cuarto">Cuarto</option>
+                    <option value="quinto">Quinto</option>
+                    <option value="sexto">Sexto</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label for="NoTel">Número Telefónico:
+                <br>
+                <input type="tel" name="no_tel" id="no_tel">
+            </label>
+            <br>
+            <br>
+            <label for="Contraseña">Contraseña:
+                <br>
+                <input type="password" name="contrasena" id="contrasena">
+            </label>
+            <br>
+            <br>
+            <label for="confirmarContrasena">Confirmar contraseña:
+                <br>
+                <input type="password" id="confirmarContrasena" name="confirmarContrasena">
+            </label>
+            <br>
+            <br>
+            <label for="return">
+                <button id="verContrasenaBtn">Ver contraseña</button>
+            </label>
+            <br>
+            <br>
+            <label for="FotoUsuario">Elige una foto de perfil:
+                <br>
+                <input type="file" name="PFP" id="PFP" accept="image/png, image/jpeg">
+            </label>
+            <br>
+            <br>
+            <label for="return">
+                <button id="submit">Registrarse</button>
+            </label>
+        </div>
 
-        <label for="NoCuenta">Número de Cuenta:
-            <br>
-            <input type="number" name="no_cuenta" id="UsuCuenta">
-        </label>
-        <br>
-        <br>
-        <label for="NombreUsu" >Nombre(s):
-            <br>
-            <input type="text" name="usuario" id="UsuNom">
-        </label>
-        <br>
-        <br>
-        <label for="Apellidos">Apellidos:
-            <br>
-            <input type="text" name="apellidos" id="UsuarioA">
-        </label>
-        <br>
-        <br>
-        <label for="turno">Selecciona tu turno:
-            <select name="turno">
-                <option value="matutino">Matutino</option>
-                <option value="vespertino">Vespertino</option>
-            </select>
-        </label>
-        <br>
-        <br>
-        <label for="grado">Selecciona tu grado:
-            <select name="grado">
-                <option value="cuarto">Cuarto</option>
-                <option value="quinto">Quinto</option>
-                <option value="sexto">Sexto</option>
-            </select>
-        </label>
-        <br>
-        <br>
-        <label for="NoTel">Número Telefónico:
-            <br>
-            <input type="tel" name="no_tel" id="UsuTel">
-        </label>
-        <br>
-        <br>
-        <label for="Contraseña">Contraseña:
-            <br>
-            <input type="password" id="contraseña" name="UsuContra">
-        </label>
-        <br>
-        <br>
-        <label for="Contraseña">Confirmar contraseña:
-            <br>
-            <input type="password" id="confirmarContrasena" name="UsuContra">
-        </label>
-        <br>
-        <br>
-        <label for="return">
-            <button type="button" id="verContraseñaBtn">Ver contraseña</button>
-        </label>
-        <br>
-        <br>
-        <label for="FotoUsuario">Elige una foto de perfil:
-            <br>
-            <input type="file" name="PFP" id="FotoUsu" accept="image/png, image/jpeg">
-        </label>
-        <br>
-        <br>
-        <label for="return">
-            <button type="submit" id="submit">Registrarse</button>
-        </label>
-        </form>
-
-    <!-- SCRIPT -->
     <script>
         document.getElementById("paginaPrincipalBtn").addEventListener("click", function() {
             window.location.href = "index.html";
         });
 
-        document.getElementById("verContraseñaBtn").addEventListener("click", function() {
-            var contraseñaInput = document.getElementById("contraseña");
+        document.getElementById("verContrasenaBtn").addEventListener("click", function() {
+            var contraseñaInput = document.getElementById("contrasena");
             var confirmarContraseñaInput = document.getElementById("confirmarContrasena");
             if (contraseñaInput.type === "password") {
                 contraseñaInput.type = "text";
@@ -109,19 +106,17 @@
             }
         });
 
-
-        document.getElementById("crearCuentaForm").addEventListener("submit", function(event) {
-            var contraseña = document.getElementById("contraseña").value;
+        document.getElementById("form").addEventListener("submit", function(event) {
+            var contraseña = document.getElementById("contrasena").value;
             var confirmarContraseña = document.getElementById("confirmarContrasena").value;
-            if (contraseña.length <= 8) {
-                alert("La contraseña debe tener 8 caracteres mínimo. Por favor, inténtalo de nuevo.");
+            if (contraseña.length !== 9) {
+                alert("La contraseña debe tener exactamente 9 caracteres. Por favor, inténtalo de nuevo.");
                 event.preventDefault();
             } else if (contraseña !== confirmarContraseña) {
                 alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
                 event.preventDefault();
             }
         });
-
     </script>
 </body>
 </html>

@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="imágenes/logo.png" href="imágenes/logo.png" size="32x32">
+    <link rel="icon" type="../statics/media/Imágenes/logo.png" href="../statics/media/Imágenes/logo.png" size="32x32">
     <title>Red Social de la Prepa</title>
 </head>
 <body>
     <table border="1" align="center" width="300">
         <thead>
             <th>
-                <img src="imágenes/logo.png" alt="logo" height="128" widht="128">
+                <img src="../statics/media/Imágenes/logo.png" alt="logo" height="128" widht="128">
             </th>
         </thead>
         <tbody align="center">
             <td>
-                <form action="./guardatos.php" method="post">
+                <form action="../dynamics/php/guardatos.php" method="post">
                     <label for="nombre" required"">Nombre:</label><br>
                     <input type="text" name="Nombre de usuario" id="nombre" placeholder="Introduce el nombre con el que quieres que se te conozca">          
         
