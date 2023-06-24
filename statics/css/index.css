@@ -47,7 +47,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   a {
     display: block;
     margin-top: 10px;
@@ -59,3 +59,22 @@ body {
     color: #000;
   }
   
+  .header button:hover {
+    background-color: white;
+    border: 2px solid #A2F2DC
+  }
+
+  #usuarioBtn:hover {
+    background-color: #A2F2DC;
+    border: 2px solid rgb(255, 255, 255)
+  }
+
+  #administradorBtn:hover {
+    background-color: #A2F2DC;
+    border: 2px solid rgb(255, 255, 255)
+  }
+
+  #moderadorBtn:hover {
+    background-color: #A2F2DC;
+    border: 2px solid rgb(255, 255, 255)
+  }
