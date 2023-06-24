@@ -17,12 +17,11 @@
 
         <tbody>
             <td>
-                <form method="post">
-                    <label for="TituloPubli">Título de la Publicación:
+                <form action="../dynamics/php/pventas.php" method="post" enctype="multipart/form-data" target="_self">
+                    <label for ="TituloPubli">Título de la Publicación:
                         <br>
-                        <input type="text" name="TituloPubli1" id="TituloPubliVentas">
+                        <input type="text" name="TituloPubli" id="TituloPubliVentas">
                     </label>
-                    <br>
                     <br>
                     <label for="Descripción">Descripción del producto:
                         <br>
@@ -46,9 +45,9 @@
                     </label>
                     <br>
                     <br>
-                    <label for="Ubicación">
-                        <button type="button">Selecciona Punto de Venta</button>
-                    </label>
+                </form>
+                <form action='..\templates\map.html' method='post' target='_self'>
+                        <input type='submit' value='Ubicación'/>
                 </form>
             </td>
 
@@ -59,3 +58,4 @@
     
 </body>
 </html>
+
